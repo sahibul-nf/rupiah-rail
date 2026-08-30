@@ -1,0 +1,30 @@
+---
+import { problem } from "../data/copy";
+import Icon from "./Icon.astro";
+import { HoverLift } from "./react/HoverLift";
+---
+
+<section id="problem" class="border-t border-line" aria-labelledby="problem-heading">
+  <div class="shell section">
+    <h2 id="problem-heading" class="max-w-2xl text-2xl font-semibold tracking-tight text-ink sm:text-[1.85rem]">
+      {problem.title}
+    </h2>
+    <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        problem.cards.map((card) => (
+          <li>
+            <HoverLift client:visible className="h-full">
+              <article class="card-surface h-full rounded-2xl p-6">
+                <span class="inline-flex rounded-lg bg-accent-soft p-2.5 text-accent">
+                  <Icon name={card.icon} />
+                </span>
+                <h3 class="mt-5 text-lg font-semibold tracking-tight text-ink">{card.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-ink-muted">{card.body}</p>
+              </article>
+            </HoverLift>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

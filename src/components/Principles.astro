@@ -1,0 +1,33 @@
+---
+import { principles } from "../data/copy";
+import Icon from "./Icon.astro";
+import { HoverLift } from "./react/HoverLift";
+---
+
+<section id="principles" class="border-t border-line" aria-labelledby="principles-heading">
+  <div class="shell section">
+    <h2
+      id="principles-heading"
+      class="max-w-2xl text-2xl font-semibold tracking-tight text-ink sm:text-[1.85rem]"
+    >
+      {principles.title}
+    </h2>
+    <ul class="mt-12 grid gap-5 sm:grid-cols-2">
+      {
+        principles.items.map((item) => (
+          <li>
+            <HoverLift client:visible className="h-full">
+              <article class="card-surface h-full rounded-2xl p-6">
+                <span class="inline-flex rounded-lg bg-accent-soft p-2.5 text-accent">
+                  <Icon name={item.icon} />
+                </span>
+                <h3 class="mt-4 text-lg font-semibold tracking-tight text-ink">{item.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-ink-muted">{item.body}</p>
+              </article>
+            </HoverLift>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

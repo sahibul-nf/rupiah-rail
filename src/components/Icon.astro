@@ -1,0 +1,57 @@
+---
+type IconName = "hops" | "form" | "quote" | "custody" | "shield";
+
+interface Props {
+  name: IconName;
+  className?: string;
+}
+
+const { name, className = "h-6 w-6" } = Astro.props;
+
+function assertNever(value: never): never {
+  throw new Error(`Unhandled icon: ${String(value)}`);
+}
+
+let title = "";
+let path = "";
+
+switch (name) {
+  case "hops":
+    title = "Connected path";
+    path =
+      "M5 12h4l2-4 2 8 2-4h4M5 19h14M5 5h14";
+    break;
+  case "form":
+    title = "Saved details";
+    path = "M8 7h8M8 12h8M8 17h5M6 4h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z";
+    break;
+  case "quote":
+    title = "Net amount";
+    path = "M4 16h8l8-8M12 8h8M4 8h4";
+    break;
+  case "custody":
+    title = "Self-custody";
+    path = "M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3z";
+    break;
+  case "shield":
+    title = "Partner compliance";
+    path = "M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3zm-3 9 2 2 4-4";
+    break;
+  default:
+    assertNever(name);
+}
+---
+
+<svg
+  class={className}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <title>{title}</title>
+  <path d={path}></path>
+</svg>

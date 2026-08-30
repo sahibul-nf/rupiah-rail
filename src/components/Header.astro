@@ -1,0 +1,54 @@
+---
+import { header, nav, site } from "../data/copy";
+import WordmarkMark from "./WordmarkMark.astro";
+---
+
+<header
+  class="sticky top-0 z-40 border-b border-line/80 bg-canvas/85 backdrop-blur-md"
+>
+  <div class="shell flex items-center justify-between gap-3 py-3.5">
+    <a href="/" class="flex items-center gap-2.5 text-ink">
+      <WordmarkMark className="h-8 w-8 shrink-0" />
+      <span class="text-[0.95rem] font-semibold tracking-tight">{site.name}</span>
+    </a>
+
+    <nav class="hidden items-center gap-7 text-sm text-ink-muted md:flex" aria-label="Primary">
+      {
+        nav.map((item) => (
+          <a class="hover:text-ink" href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a class="btn-primary hidden sm:inline-flex" href={header.ctaHref}>
+        {header.cta}
+      </a>
+      <details class="relative md:hidden">
+        <summary
+          class="flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center rounded-md border border-line bg-surface px-3 text-sm font-medium text-ink"
+        >
+          Menu
+        </summary>
+        <div
+          class="absolute right-0 mt-2 w-56 rounded-lg border border-line bg-surface p-3 shadow-sm"
+        >
+          <nav class="flex flex-col gap-1 text-sm" aria-label="Mobile">
+            {
+              nav.map((item) => (
+                <a class="rounded-md px-2 py-2 text-ink-muted hover:bg-accent-soft hover:text-ink" href={item.href}>
+                  {item.label}
+                </a>
+              ))
+            }
+            <a class="btn-primary mt-2" href={header.ctaHref}>
+              {header.cta}
+            </a>
+          </nav>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

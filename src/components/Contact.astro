@@ -1,0 +1,24 @@
+---
+import { contact, site } from "../data/copy";
+import { HoverLift } from "./react/HoverLift";
+---
+
+<section id="contact" class="bg-ink" aria-labelledby="contact-heading">
+  <div class="shell section">
+    <div class="grid items-end gap-8 lg:grid-cols-[minmax(0,1.3fr)_auto]">
+      <div>
+        <h2
+          id="contact-heading"
+          class="max-w-2xl text-2xl font-semibold tracking-tight text-canvas sm:text-[1.85rem]"
+        >
+          {contact.title}
+        </h2>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-canvas/75">{contact.body}</p>
+        <p class="mt-4 text-sm text-canvas/55">{contact.note}</p>
+      </div>
+      <HoverLift client:visible className="inline-flex">
+        <a class="btn-on-navy" href={`mailto:${site.email}`}>{contact.cta}</a>
+      </HoverLift>
+    </div>
+  </div>
+</section>

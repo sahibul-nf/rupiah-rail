@@ -1,0 +1,34 @@
+---
+import { footer, site } from "../data/copy";
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props;
+---
+
+<footer class="border-t border-line bg-canvas">
+  <div class="shell flex flex-col gap-4 py-10 text-sm text-ink-muted">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <p>{footer.copyright}</p>
+      <nav class="flex gap-5" aria-label="Legal">
+        <a
+          href="/privacy"
+          class="hover:text-ink"
+          aria-current={currentPath === "/privacy" ? "page" : undefined}
+        >
+          {footer.privacy}
+        </a>
+        <a
+          href="/terms"
+          class="hover:text-ink"
+          aria-current={currentPath === "/terms" ? "page" : undefined}
+        >
+          {footer.terms}
+        </a>
+      </nav>
+    </div>
+    <p class="max-w-3xl text-xs leading-relaxed">{site.affiliation}</p>
+  </div>
+</footer>

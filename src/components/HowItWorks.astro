@@ -1,0 +1,15 @@
+---
+import { how } from "../data/copy";
+import { StaggerSteps } from "./react/StaggerSteps";
+---
+
+<section id="how" class="border-t border-line" aria-labelledby="how-heading">
+  <div class="shell section">
+    <h2 id="how-heading" class="max-w-2xl text-2xl font-semibold tracking-tight text-ink sm:text-[1.85rem]">
+      {how.title}
+    </h2>
+    <div class="mt-12">
+      <StaggerSteps client:visible steps={[...how.steps]} footnote={how.footnote} />
+    </div>
+  </div>
+</section>

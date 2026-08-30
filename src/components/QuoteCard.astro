@@ -1,0 +1,39 @@
+---
+import { quoteCard } from "../data/copy";
+---
+
+<aside
+  class="card-surface overflow-hidden rounded-2xl shadow-[0_18px_40px_-28px_rgba(18,35,58,0.45)]"
+  aria-label="Illustrative quote example"
+>
+  <div class="flex items-center justify-between border-b border-line px-5 py-3">
+    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-ink-muted">
+      {quoteCard.kicker}
+    </p>
+    <span class="rounded-full bg-accent-soft px-2 py-0.5 font-mono text-[0.65rem] text-accent">
+      Sample
+    </span>
+  </div>
+  <dl class="divide-y divide-line">
+    {
+      quoteCard.rows.map((row) => (
+        <div class="flex items-baseline justify-between gap-4 px-5 py-3.5">
+          <dt class="text-sm text-ink-muted">{row.label}</dt>
+          <dd
+            class:list={[
+              "font-mono text-right tracking-tight",
+              "emphasize" in row && row.emphasize
+                ? "text-lg font-semibold text-ink sm:text-xl"
+                : "text-sm text-ink",
+            ]}
+          >
+            {row.value}
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+  <p class="border-t border-line bg-accent-soft/50 px-5 py-3 text-xs text-ink-muted">
+    {quoteCard.label}
+  </p>
+</aside>
