@@ -52,7 +52,7 @@ No backend, database, authentication, analytics, or API keys.
 
 No 21st.dev components were copied or installed. Community blocks reviewed (marketing heroes, Charter-style templates, announcement banners, alert dialogs) added Radix/shadcn weight without improving this copy-led page. UI is original Tailwind plus the Motion islands above.
 
-Typography uses locally bundled IBM Plex Sans and IBM Plex Mono (`public/fonts/`, SIL Open Font License). There is no Google Fonts or other font CDN.
+Typography uses the system UI font stack (no external font CDN).
 
 ## Copy and compliance
 
@@ -71,5 +71,4 @@ src/
   components/react/    # Motion islands
   styles/global.css
 public/favicon.svg     # original geometric mark
-public/fonts/          # IBM Plex Sans + Mono (local)
 ```
