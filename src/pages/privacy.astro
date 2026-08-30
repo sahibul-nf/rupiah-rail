@@ -1,0 +1,15 @@
+---
+import { privacy, site } from "../data/copy";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title={`${privacy.title} — ${site.name}`} description={privacy.description} currentPath="/privacy">
+  <article class="shell section">
+    <div class="max-w-3xl">
+      <h1 class="text-3xl font-semibold tracking-tight text-ink">{privacy.title}</h1>
+      <div class="mt-8 space-y-4 text-ink-muted">
+        {privacy.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import Contact from "../components/Contact.astro";
+import Disclaimer from "../components/Disclaimer.astro";
+import Hero from "../components/Hero.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import Principles from "../components/Principles.astro";
+import Problem from "../components/Problem.astro";
+import { site } from "../data/copy";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title={`${site.name} — ${site.tagline}`} description={site.description} currentPath="/">
+  <Hero />
+  <Problem />
+  <HowItWorks />
+  <Principles />
+  <Disclaimer />
+  <Contact />
+</BaseLayout>
