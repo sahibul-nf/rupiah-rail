@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import { MotionProvider } from "./MotionProvider";
 
 const COMPARISON_DATA = {
@@ -73,15 +72,15 @@ export function InteractiveProblemComparison() {
   return (
     <MotionProvider>
       <div className="w-full">
-        {/* Toggle Controls */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex rounded-2xl border border-slate-200 bg-white/80 p-1.5 shadow-sm backdrop-blur-md">
+        {/* Toggle Controls (Full Rounded Pill Group) */}
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex rounded-full border border-slate-200/90 bg-white/90 p-1.5 shadow-sm backdrop-blur-md">
             <button
               type="button"
               onClick={() => setActiveTab("comparison")}
-              className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
+              className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all ${
                 activeTab === "comparison"
-                  ? "bg-slate-900 text-white shadow"
+                  ? "bg-slate-900 text-white shadow-xs"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -90,9 +89,9 @@ export function InteractiveProblemComparison() {
             <button
               type="button"
               onClick={() => setActiveTab("traditional")}
-              className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
+              className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all ${
                 activeTab === "traditional"
-                  ? "bg-rose-600 text-white shadow"
+                  ? "bg-rose-600 text-white shadow-xs"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -101,9 +100,9 @@ export function InteractiveProblemComparison() {
             <button
               type="button"
               onClick={() => setActiveTab("rupiahRail")}
-              className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
+              className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all ${
                 activeTab === "rupiahRail"
-                  ? "bg-emerald-600 text-white shadow"
+                  ? "bg-emerald-600 text-white shadow-xs"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -117,7 +116,7 @@ export function InteractiveProblemComparison() {
           {/* Traditional Card */}
           {(activeTab === "comparison" || activeTab === "traditional") && (
             <div
-              className={`rounded-3xl border border-rose-200/80 bg-gradient-to-b from-rose-50/40 via-white to-white p-6 sm:p-8 shadow-sm transition-all duration-300 ${
+              className={`rounded-[1.75rem] border border-rose-200/80 bg-gradient-to-b from-rose-50/40 via-white to-white p-6 sm:p-8 shadow-xs transition-all duration-300 ${
                 activeTab === "traditional" ? "lg:col-span-2 max-w-2xl mx-auto w-full" : ""
               }`}
             >
@@ -139,9 +138,9 @@ export function InteractiveProblemComparison() {
                 {COMPARISON_DATA.traditional.steps.map((item) => (
                   <div
                     key={item.step}
-                    className="flex gap-4 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-sm"
+                    className="flex gap-4 rounded-[1.25rem] border border-slate-100 bg-white p-4 shadow-xs"
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-base">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-rose-50 text-base">
                       {item.icon}
                     </div>
                     <div>
@@ -159,12 +158,12 @@ export function InteractiveProblemComparison() {
           {/* Rupiah Rail Card */}
           {(activeTab === "comparison" || activeTab === "rupiahRail") && (
             <div
-              className={`relative overflow-hidden rounded-3xl border-2 border-emerald-500/40 bg-gradient-to-b from-emerald-50/50 via-white to-white p-6 sm:p-8 shadow-xl shadow-emerald-900/5 transition-all duration-300 ${
+              className={`relative overflow-hidden rounded-[1.75rem] border-2 border-emerald-500/40 bg-gradient-to-b from-emerald-50/50 via-white to-white p-6 sm:p-8 shadow-xl shadow-emerald-900/5 transition-all duration-300 ${
                 activeTab === "rupiahRail" ? "lg:col-span-2 max-w-2xl mx-auto w-full" : ""
               }`}
             >
-              {/* Highlight ribbon */}
-              <div className="absolute top-0 right-0 bg-gradient-to-l from-emerald-600 to-teal-600 text-white text-[11px] font-bold px-3.5 py-1 rounded-bl-xl shadow-sm">
+              {/* Highlight ribbon (Full Rounded Pill) */}
+              <div className="absolute top-4 right-4 bg-gradient-to-l from-emerald-600 to-teal-600 text-white text-[11px] font-bold px-3.5 py-1 rounded-full shadow-xs">
                 RECOMMENDED FLOW
               </div>
 
@@ -186,9 +185,9 @@ export function InteractiveProblemComparison() {
                 {COMPARISON_DATA.rupiahRail.steps.map((item) => (
                   <div
                     key={item.step}
-                    className="flex gap-4 rounded-2xl border border-emerald-100/80 bg-gradient-to-r from-emerald-50/60 to-white p-4 shadow-sm"
+                    className="flex gap-4 rounded-[1.25rem] border border-emerald-100/80 bg-gradient-to-r from-emerald-50/60 to-white p-4 shadow-xs"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-700">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-lg text-emerald-700">
                       {item.icon}
                     </div>
                     <div>
@@ -202,7 +201,7 @@ export function InteractiveProblemComparison() {
               </div>
 
               {/* Bottom Benefit Highlights */}
-              <div className="mt-6 rounded-2xl border border-emerald-200/60 bg-emerald-900 text-white p-4">
+              <div className="mt-6 rounded-[1.25rem] border border-emerald-200/60 bg-emerald-900 text-white p-4.5">
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center">
                   <div>
                     <div className="text-base font-extrabold text-emerald-300 font-mono">0</div>

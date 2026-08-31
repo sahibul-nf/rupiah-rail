@@ -15,7 +15,7 @@ import { InteractiveQuoteCalculator } from "./react/InteractiveQuoteCalculator";
       <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
         {/* Left Column: Value Prop */}
         <div class="lg:col-span-6">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-200/80 bg-emerald-50/80 px-3.5 py-1 text-xs font-semibold text-emerald-800 backdrop-blur-md">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-200/80 bg-emerald-50/80 px-4 py-1.5 text-xs font-semibold text-emerald-800 backdrop-blur-md shadow-xs">
             <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
             {hero.eyebrow}
           </div>
@@ -31,21 +31,21 @@ import { InteractiveQuoteCalculator } from "./react/InteractiveQuoteCalculator";
             {hero.supporting}
           </p>
 
-          {/* Value Badges */}
+          {/* Value Badges (Full Rounded) */}
           <div class="mt-8 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
-            <span class="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-1.5 shadow-xs">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/90 px-3.5 py-1.5 shadow-xs">
               <span class="text-emerald-500 font-bold">✓</span> Direct Local Bank Payouts
             </span>
-            <span class="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-1.5 shadow-xs">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/90 px-3.5 py-1.5 shadow-xs">
               <span class="text-emerald-500 font-bold">✓</span> Saved Beneficiary Routing
             </span>
-            <span class="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-1.5 shadow-xs">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/90 px-3.5 py-1.5 shadow-xs">
               <span class="text-emerald-500 font-bold">✓</span> Zero Spread Traps
             </span>
           </div>
 
-          {/* Call to Actions */}
-          <div class="mt-9 flex flex-col sm:flex-row gap-3">
+          {/* Call to Actions (Full Rounded) */}
+          <div class="mt-9 flex flex-col sm:flex-row gap-3.5">
             <HoverLift client:load>
               <a class="btn-primary w-full sm:w-auto" href={hero.primaryHref}>
                 {hero.primaryCta} →

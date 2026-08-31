@@ -53,9 +53,9 @@ export function InteractiveQuoteCalculator() {
     <MotionProvider>
       <div className="relative mx-auto w-full max-w-lg">
         {/* Glow ambient background behind the card */}
-        <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-teal-500/15 to-cyan-500/20 blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 -z-10" />
+        <div className="absolute -inset-1.5 rounded-[2rem] bg-gradient-to-r from-emerald-500/20 via-teal-500/15 to-cyan-500/20 blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 -z-10" />
 
-        <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 backdrop-blur-xl p-6 sm:p-7 shadow-2xl shadow-slate-900/10">
+        <div className="overflow-hidden rounded-[1.75rem] border border-slate-200/90 bg-white/95 backdrop-blur-xl p-6 sm:p-7 shadow-2xl shadow-slate-900/10">
           {/* Header Bar */}
           <div className="flex items-center justify-between border-b border-slate-100 pb-4">
             <div className="flex items-center gap-2">
@@ -67,21 +67,21 @@ export function InteractiveQuoteCalculator() {
                 Interactive Quote Simulator
               </span>
             </div>
-            <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-emerald-700 border border-emerald-200/70">
+            <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 font-mono text-[11px] font-semibold text-emerald-700 border border-emerald-200/70">
               Live Preview
             </span>
           </div>
 
           {/* Amount & Asset Selector */}
           <div className="mt-5 space-y-4">
-            <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-4">
+            <div className="rounded-[1.25rem] border border-slate-200/80 bg-slate-50/70 p-4">
               <div className="flex items-center justify-between text-xs font-semibold text-slate-500">
                 <span>YOU SEND</span>
-                <div className="flex rounded-lg bg-slate-200/70 p-0.5 text-xs font-semibold">
+                <div className="flex rounded-full bg-slate-200/70 p-0.5 text-xs font-semibold">
                   <button
                     type="button"
                     onClick={() => setAsset("USDT")}
-                    className={`rounded-md px-2.5 py-1 transition-all ${
+                    className={`rounded-full px-3 py-1 transition-all ${
                       asset === "USDT"
                         ? "bg-white text-slate-900 shadow-sm"
                         : "text-slate-600 hover:text-slate-900"
@@ -92,7 +92,7 @@ export function InteractiveQuoteCalculator() {
                   <button
                     type="button"
                     onClick={() => setAsset("USDC")}
-                    className={`rounded-md px-2.5 py-1 transition-all ${
+                    className={`rounded-full px-3 py-1 transition-all ${
                       asset === "USDC"
                         ? "bg-white text-slate-900 shadow-sm"
                         : "text-slate-600 hover:text-slate-900"
@@ -132,14 +132,14 @@ export function InteractiveQuoteCalculator() {
                 />
               </div>
 
-              {/* Preset Chips */}
+              {/* Preset Chips (Full Rounded) */}
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {PRESET_AMOUNTS.map((p) => (
                   <button
                     key={p}
                     type="button"
                     onClick={() => setAmount(p)}
-                    className={`rounded-lg px-2.5 py-1 text-xs font-mono font-medium transition-colors ${
+                    className={`rounded-full px-3 py-1 text-xs font-mono font-medium transition-colors ${
                       amount === p
                         ? "bg-emerald-600 text-white font-semibold shadow-sm"
                         : "bg-white text-slate-600 border border-slate-200 hover:border-emerald-300"
@@ -165,7 +165,7 @@ export function InteractiveQuoteCalculator() {
                       const found = NETWORKS.find((n) => n.id === e.target.value);
                       if (found) setNetwork(found);
                     }}
-                    className="w-full appearance-none rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-medium text-slate-800 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full appearance-none rounded-full border border-slate-200 bg-white px-4 py-2.5 text-xs font-medium text-slate-800 shadow-xs focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     {NETWORKS.map((n) => (
                       <option key={n.id} value={n.id}>
@@ -173,7 +173,7 @@ export function InteractiveQuoteCalculator() {
                       </option>
                     ))}
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-400 text-xs">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-slate-400 text-xs">
                     ▼
                   </div>
                 </div>
@@ -191,7 +191,7 @@ export function InteractiveQuoteCalculator() {
                       const found = BANKS.find((b) => b.id === e.target.value);
                       if (found) setSelectedBank(found);
                     }}
-                    className="w-full appearance-none rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-medium text-slate-800 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full appearance-none rounded-full border border-slate-200 bg-white px-4 py-2.5 text-xs font-medium text-slate-800 shadow-xs focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     {BANKS.map((b) => (
                       <option key={b.id} value={b.id}>
@@ -199,7 +199,7 @@ export function InteractiveQuoteCalculator() {
                       </option>
                     ))}
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-400 text-xs">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-slate-400 text-xs">
                     ▼
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export function InteractiveQuoteCalculator() {
             </div>
 
             {/* Breakdown Detail */}
-            <div className="rounded-2xl border border-slate-100 bg-slate-50/50 p-3.5 text-xs space-y-2">
+            <div className="rounded-[1.25rem] border border-slate-100 bg-slate-50/50 p-4 text-xs space-y-2">
               <div className="flex justify-between text-slate-600">
                 <span>Indicative FX Rate</span>
                 <span className="font-mono font-medium text-slate-900">
@@ -229,7 +229,7 @@ export function InteractiveQuoteCalculator() {
             </div>
 
             {/* Net Amount Highlight Box */}
-            <div className="relative overflow-hidden rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-teal-50/60 to-white p-4.5 sm:p-5">
+            <div className="relative overflow-hidden rounded-[1.25rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-teal-50/60 to-white p-4.5 sm:p-5 shadow-xs">
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
@@ -237,7 +237,7 @@ export function InteractiveQuoteCalculator() {
                   </span>
                   <p className="text-[11px] text-emerald-700/80">No surprises, what you see is what lands</p>
                 </div>
-                <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-800">
+                <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[10px] font-bold text-emerald-800">
                   Zero Spread Markup
                 </span>
               </div>
@@ -259,7 +259,7 @@ export function InteractiveQuoteCalculator() {
                 <button
                   type="button"
                   onClick={handleCopySummary}
-                  className="rounded-lg border border-emerald-300/80 bg-white/90 px-2.5 py-1.5 text-xs font-medium text-emerald-800 hover:bg-emerald-50 transition shadow-sm"
+                  className="rounded-full border border-emerald-300/80 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-emerald-800 hover:bg-emerald-50 transition shadow-xs"
                   title="Copy quote breakdown"
                 >
                   {isCopied ? "✓ Copied" : "Copy"}
