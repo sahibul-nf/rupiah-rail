@@ -4,46 +4,61 @@ import WordmarkMark from "./WordmarkMark.astro";
 ---
 
 <header
-  class="sticky top-0 z-40 border-b border-line/80 bg-canvas/85 backdrop-blur-md"
+  class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl transition-all"
 >
-  <div class="shell flex items-center justify-between gap-3 py-3.5">
-    <a href="/" class="flex items-center gap-2.5 text-ink">
-      <WordmarkMark className="h-8 w-8 shrink-0" />
-      <span class="text-[0.95rem] font-semibold tracking-tight">{site.name}</span>
+  <div class="shell flex items-center justify-between gap-4 py-4">
+    <a href="/" class="flex items-center gap-2.5 text-slate-900 group">
+      <div class="p-1 rounded-xl bg-slate-50 border border-slate-200 group-hover:border-emerald-500/50 transition-all">
+        <WordmarkMark className="h-7 w-7 shrink-0 text-emerald-600" />
+      </div>
+      <div class="flex flex-col">
+        <span class="text-[0.95rem] font-extrabold tracking-tight text-slate-900 leading-none">
+          {site.name}
+        </span>
+        <span class="text-[10px] font-mono text-emerald-700 font-semibold tracking-wider uppercase mt-0.5">
+          Settlement Rail
+        </span>
+      </div>
     </a>
 
-    <nav class="hidden items-center gap-7 text-sm text-ink-muted md:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex" aria-label="Primary">
       {
         nav.map((item) => (
-          <a class="hover:text-ink" href={item.href}>
+          <a
+            class="hover:text-emerald-700 transition-colors py-1 relative font-medium"
+            href={item.href}
+          >
             {item.label}
           </a>
         ))
       }
     </nav>
 
-    <div class="flex items-center gap-2">
-      <a class="btn-primary hidden sm:inline-flex" href={header.ctaHref}>
+    <div class="flex items-center gap-3">
+      <a class="btn-primary hidden sm:inline-flex text-xs px-4 py-2" href={header.ctaHref}>
         {header.cta}
       </a>
       <details class="relative md:hidden">
         <summary
-          class="flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center rounded-md border border-line bg-surface px-3 text-sm font-medium text-ink"
+          class="flex min-h-10 min-w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-800 shadow-sm"
         >
           Menu
         </summary>
         <div
-          class="absolute right-0 mt-2 w-56 rounded-lg border border-line bg-surface p-3 shadow-sm"
+          class="absolute right-0 mt-2 w-64 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-xl p-3.5 shadow-2xl"
         >
-          <nav class="flex flex-col gap-1 text-sm" aria-label="Mobile">
+          <nav class="flex flex-col gap-1.5 text-sm" aria-label="Mobile">
             {
               nav.map((item) => (
-                <a class="rounded-md px-2 py-2 text-ink-muted hover:bg-accent-soft hover:text-ink" href={item.href}>
+                <a
+                  class="rounded-xl px-3 py-2 text-slate-700 font-medium hover:bg-emerald-50 hover:text-emerald-800 transition"
+                  href={item.href}
+                >
                   {item.label}
                 </a>
               ))
             }
-            <a class="btn-primary mt-2" href={header.ctaHref}>
+            <a class="btn-primary mt-2 text-center text-xs" href={header.ctaHref}>
               {header.cta}
             </a>
           </nav>

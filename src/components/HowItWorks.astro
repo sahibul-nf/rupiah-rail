@@ -1,15 +1,24 @@
 ---
 import { how } from "../data/copy";
-import { StaggerSteps } from "./react/StaggerSteps";
+import { InteractivePipelineTracker } from "./react/InteractivePipelineTracker";
 ---
 
-<section id="how" class="border-t border-line" aria-labelledby="how-heading">
-  <div class="shell section">
-    <h2 id="how-heading" class="max-w-2xl text-2xl font-semibold tracking-tight text-ink sm:text-[1.85rem]">
-      {how.title}
-    </h2>
-    <div class="mt-12">
-      <StaggerSteps client:visible steps={[...how.steps]} footnote={how.footnote} />
+<section id="how" class="border-t border-slate-200/80 bg-white relative overflow-hidden" aria-labelledby="how-heading">
+  <div class="glow-spot-emerald -bottom-20 -left-20 h-96 w-96 opacity-40"></div>
+
+  <div class="shell section relative">
+    <div class="max-w-3xl mb-12 text-center mx-auto">
+      <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+        Settlement Architecture
+      </span>
+      <h2 id="how-heading" class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+        {how.title}
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+        A seamless 3-stage visual pipeline from your self-custody wallet straight into local Indonesian bank accounts.
+      </p>
     </div>
+
+    <InteractivePipelineTracker client:visible />
   </div>
 </section>

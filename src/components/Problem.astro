@@ -1,30 +1,24 @@
 ---
 import { problem } from "../data/copy";
-import Icon from "./Icon.astro";
-import { HoverLift } from "./react/HoverLift";
+import { InteractiveProblemComparison } from "./react/InteractiveProblemComparison";
 ---
 
-<section id="problem" class="border-t border-line" aria-labelledby="problem-heading">
-  <div class="shell section">
-    <h2 id="problem-heading" class="max-w-2xl text-2xl font-semibold tracking-tight text-ink sm:text-[1.85rem]">
-      {problem.title}
-    </h2>
-    <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        problem.cards.map((card) => (
-          <li>
-            <HoverLift client:visible className="h-full">
-              <article class="card-surface h-full rounded-2xl p-6">
-                <span class="inline-flex rounded-lg bg-accent-soft p-2.5 text-accent">
-                  <Icon name={card.icon} />
-                </span>
-                <h3 class="mt-5 text-lg font-semibold tracking-tight text-ink">{card.title}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-ink-muted">{card.body}</p>
-              </article>
-            </HoverLift>
-          </li>
-        ))
-      }
-    </ul>
+<section id="problem" class="border-t border-slate-200/80 bg-slate-50/50 relative overflow-hidden" aria-labelledby="problem-heading">
+  <div class="glow-spot-indigo top-10 right-0 h-80 w-80 opacity-30"></div>
+
+  <div class="shell section relative">
+    <div class="max-w-3xl mb-12 text-center mx-auto">
+      <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+        The Problem & Friction
+      </span>
+      <h2 id="problem-heading" class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+        {problem.title}
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+        Global earners and Web3 freelancers lose up to 5% in hidden spreads, network gas hops, and tedious manual bank input.
+      </p>
+    </div>
+
+    <InteractiveProblemComparison client:visible />
   </div>
 </section>

@@ -2,33 +2,53 @@
 import { hero } from "../data/copy";
 import { HeroReveal } from "./react/HeroReveal";
 import { HoverLift } from "./react/HoverLift";
-import QuoteCard from "./QuoteCard.astro";
+import { InteractiveQuoteCalculator } from "./react/InteractiveQuoteCalculator";
 ---
 
-<section class="relative overflow-hidden" aria-labelledby="hero-heading">
-  <div class="hero-wash" aria-hidden="true"></div>
-  <div class="shell relative section pt-16 sm:pt-24">
+<section class="relative overflow-hidden pt-10 pb-16 sm:pt-16 sm:pb-24" aria-labelledby="hero-heading">
+  {/* Ambient glowing radial backdrop */}
+  <div class="glow-spot-emerald -top-24 right-10 h-96 w-96 opacity-60"></div>
+  <div class="glow-spot-indigo top-48 -left-20 h-96 w-96 opacity-50"></div>
+
+  <div class="shell relative">
     <HeroReveal client:load>
-      <div class="grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)] lg:gap-16">
-        <div>
-          <p
-            class="inline-flex rounded-full border border-line bg-accent-soft px-3 py-1 text-xs font-medium tracking-wide text-accent"
-          >
+      <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+        {/* Left Column: Value Prop */}
+        <div class="lg:col-span-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-200/80 bg-emerald-50/80 px-3.5 py-1 text-xs font-semibold text-emerald-800 backdrop-blur-md">
+            <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
             {hero.eyebrow}
-          </p>
+          </div>
+
           <h1
             id="hero-heading"
-            class="mt-6 max-w-xl text-[clamp(2rem,4.2vw,3.35rem)] font-semibold leading-[1.12] tracking-tight text-ink"
+            class="mt-6 text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.12] tracking-tight text-slate-900"
           >
-            {hero.headline}
+            A simpler path from <span class="text-gradient-accent">stablecoins</span> to Indonesian bank accounts.
           </h1>
-          <p class="mt-6 max-w-xl text-base leading-relaxed text-ink-muted sm:text-[1.05rem]">
+
+          <p class="mt-6 text-base sm:text-lg leading-relaxed text-slate-600 max-w-xl">
             {hero.supporting}
           </p>
-          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+
+          {/* Value Badges */}
+          <div class="mt-8 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
+            <span class="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-1.5 shadow-xs">
+              <span class="text-emerald-500 font-bold">✓</span> Direct Local Bank Payouts
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-1.5 shadow-xs">
+              <span class="text-emerald-500 font-bold">✓</span> Saved Beneficiary Routing
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-1.5 shadow-xs">
+              <span class="text-emerald-500 font-bold">✓</span> Zero Spread Traps
+            </span>
+          </div>
+
+          {/* Call to Actions */}
+          <div class="mt-9 flex flex-col sm:flex-row gap-3">
             <HoverLift client:load>
               <a class="btn-primary w-full sm:w-auto" href={hero.primaryHref}>
-                {hero.primaryCta}
+                {hero.primaryCta} →
               </a>
             </HoverLift>
             <HoverLift client:load>
@@ -38,7 +58,11 @@ import QuoteCard from "./QuoteCard.astro";
             </HoverLift>
           </div>
         </div>
-        <QuoteCard />
+
+        {/* Right Column: Live Interactive Calculator */}
+        <div class="lg:col-span-6 w-full">
+          <InteractiveQuoteCalculator client:load />
+        </div>
       </div>
     </HeroReveal>
   </div>
