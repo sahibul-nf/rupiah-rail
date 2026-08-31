@@ -3,7 +3,12 @@ export const site = {
   tagline: "From stablecoins to your Indonesian bank account, without the detours.",
   description:
     "Rupiah Rail is exploring a clearer cash-out experience for freelancers and global earners: saved bank destinations, transparent net-IDR quotes, and reliable transaction tracking.",
-  email: "hello@rupiahrail.com",
+  email: "developer.sahibulnf@gmail.com",
+  founder: {
+    name: "Sahibul Nuzul Firdaus",
+    role: "Independent Founder, Rupiah Rail",
+    email: "developer.sahibulnf@gmail.com",
+  },
   affiliation:
     "Not affiliated with MiniPay, Celo, PEXX, Noah, or their respective affiliates.",
 } as const;
@@ -33,12 +38,12 @@ export const hero = {
 export const quoteCard = {
   kicker: "Conceptual quote",
   rows: [
-    { label: "Send", value: "100 USDT" },
-    { label: "Rate", value: "Illustrative" },
+    { label: "Send (illustrative)", value: "100 USDT" },
+    { label: "Rate", value: "Illustrative only" },
     { label: "Fees", value: "Shown in quote" },
     { label: "Net IDR", value: "Rp 1,5xx,xxx", emphasize: true },
   ],
-  label: "Illustrative only — not a live quote.",
+  label: "Illustrative only — research concept.",
 } as const;
 
 export const problem = {
@@ -68,17 +73,17 @@ export const how = {
     {
       number: "1",
       title: "Choose a saved bank destination",
-      body: "Reuse a verified beneficiary instead of re-entering account details for every cash-out.",
+      body: "Explore reusing a saved beneficiary profile instead of re-entering account details for each cash-out.",
     },
     {
       number: "2",
-      title: "Review a transparent net-IDR quote",
-      body: "See the stablecoin amount, exchange rate, fees, and expected net IDR before confirming.",
+      title: "Review an indicative net-IDR quote",
+      body: "See illustrative stablecoin amounts, exchange rates, fee breakdowns, and estimated net IDR before confirming.",
     },
     {
       number: "3",
       title: "Confirm and track settlement",
-      body: "Follow a simple, trackable path from authorization through to the bank destination.",
+      body: "Follow a trackable conceptual path from authorization through to the bank destination.",
     },
   ],
   footnote:
@@ -96,17 +101,17 @@ export const principles = {
     {
       icon: "form" as const,
       title: "Repeatable payouts",
-      body: "Save verified beneficiary details securely, once available through a licensed partner.",
+      body: "Save beneficiary details securely, once available through potential third-party licensed providers.",
     },
     {
       icon: "custody" as const,
       title: "Self-custody first",
-      body: "Explore flows where users retain control until they authorize a transaction.",
+      body: "Explore flows where users retain sovereign control until they authorize a transaction.",
     },
     {
       icon: "shield" as const,
       title: "Partner-led compliance",
-      body: "Any exchange and fiat settlement would be delivered by properly licensed third-party providers.",
+      body: "Any future exchange and fiat settlement would be delivered exclusively by properly licensed third-party providers.",
     },
   ],
 } as const;

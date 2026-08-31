@@ -13,7 +13,7 @@ import { HoverLift } from "./react/HoverLift";
       <div class="lg:col-span-8">
         <span class="inline-flex items-center gap-2 rounded-full bg-emerald-950/80 border border-emerald-500/30 px-3.5 py-1 text-xs font-mono font-semibold text-emerald-400">
           <span class="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
-          OPEN FOR COLLABORATION
+          OPEN FOR COLLABORATION & RESEARCH
         </span>
 
         <h2
@@ -34,16 +34,25 @@ import { HoverLift } from "./react/HoverLift";
 
       <div class="lg:col-span-4 flex flex-col gap-4">
         <div class="rounded-[1.75rem] border border-slate-800 bg-slate-900/90 p-6 sm:p-7 backdrop-blur-xl shadow-2xl">
-          <span class="text-xs font-mono uppercase text-slate-400">Direct Inquiries</span>
-          <div class="mt-2 text-sm font-bold text-white font-mono break-all select-all">
-            {site.email}
+          <span class="text-xs font-mono uppercase text-slate-400">Direct Contact</span>
+          
+          <div class="mt-3 space-y-1">
+            <div class="text-base font-bold text-white tracking-tight">
+              {site.founder.name}
+            </div>
+            <div class="text-xs font-medium text-emerald-400 font-mono">
+              {site.founder.role}
+            </div>
+            <div class="text-xs text-slate-300 font-mono select-all pt-1">
+              {site.founder.email}
+            </div>
           </div>
 
           <div class="mt-6 flex flex-col gap-2.5">
             <HoverLift client:visible className="w-full">
               <a
                 class="btn-primary w-full text-center text-sm"
-                href={`mailto:${site.email}`}
+                href={`mailto:${site.founder.email}`}
               >
                 {contact.cta} →
               </a>

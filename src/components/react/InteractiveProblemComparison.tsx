@@ -4,62 +4,62 @@ import { MotionProvider } from "./MotionProvider";
 const COMPARISON_DATA = {
   traditional: {
     title: "The Current Multi-Hop Detour",
-    badge: "5 Steps • ~15-45 mins • Hidden FX & WD Fees",
+    badge: "5 Steps • Multiple manual hops • Unclear net outcomes",
     badgeColor: "bg-rose-50 text-rose-700 border-rose-200",
     steps: [
       {
         step: 1,
         title: "Bridge / Multi-Wallet Hop",
-        desc: "Transfer tokens across non-native chains, paying network bridge gas & waiting for confirmations.",
+        desc: "Transfer tokens across non-native chains, paying network bridge gas and managing multiple wallet transactions.",
         icon: "⛓️",
       },
       {
         step: 2,
         title: "Deposit into Centralized Exchange (CEX)",
-        desc: "Wait for 20-30 block confirmations on exchange deposit addresses with risk of freeze.",
+        desc: "Wait for block confirmations on exchange deposit addresses.",
         icon: "🏦",
       },
       {
         step: 3,
         title: "Order Book Trade (USDT -> IDR)",
-        desc: "Execute spot market trades with maker/taker slippage, spread loss, and market volatility.",
+        desc: "Execute spot trades with order book spreads, market fluctuation, and trading fees.",
         icon: "📉",
       },
       {
         step: 4,
         title: "Re-Enter Indonesian Bank Details",
-        desc: "Manually fill 10-16 digit bank numbers and beneficiary names with zero error tolerance.",
+        desc: "Manually fill bank numbers and beneficiary names for each withdrawal.",
         icon: "⌨️",
       },
       {
         step: 5,
-        title: "CEX Fiat Withdrawal & Unknown Net IDR",
-        desc: "Fixed fiat WD fee deducted from payout. Final landing amount is rarely clear upfront.",
+        title: "CEX Fiat Withdrawal & Unclear Net IDR",
+        desc: "Deductions from withdrawal fees and exchange spreads make final landing amounts unclear in advance.",
         icon: "❓",
       },
     ],
   },
   rupiahRail: {
-    title: "The Rupiah Rail Direct Route",
-    badge: "1-Click Direct • Sub-minute Intent • Guaranteed Net IDR",
+    title: "The Rupiah Rail Proposed Model",
+    badge: "Exploratory model • Indicative net-IDR quote • Simplified flow",
     badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
     steps: [
       {
         step: 1,
         title: "Select Saved Beneficiary",
-        desc: "Choose your verified Indonesian bank account from your secure saved profiles with one tap.",
+        desc: "Explore choosing a saved Indonesian bank destination from your profile instead of re-typing details.",
         icon: "✨",
       },
       {
         step: 2,
-        title: "Transparent Net IDR Lock",
-        desc: "See the exact rupiah you will receive in your bank account with zero hidden spreads.",
+        title: "Transparent Net IDR Quote",
+        desc: "Review an indicative net-IDR quote showing the estimated rupiah outcome before authorizing.",
         icon: "🔒",
       },
       {
         step: 3,
-        title: "Single Authorization & Settlement",
-        desc: "Authorize from your self-custody wallet directly to licensed payout rails. Settled instantly.",
+        title: "Single Authorization & Settlement Path",
+        desc: "Authorize from your self-custody wallet to third-party payout rails, tracking progress clearly.",
         icon: "🚀",
       },
     ],
@@ -95,7 +95,7 @@ export function InteractiveProblemComparison() {
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              The Old Detour (5 Steps)
+              The Current Detour (5 Steps)
             </button>
             <button
               type="button"
@@ -106,7 +106,7 @@ export function InteractiveProblemComparison() {
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              Rupiah Rail Way (Direct)
+              Proposed Model (Conceptual)
             </button>
           </div>
         </div>
@@ -164,7 +164,7 @@ export function InteractiveProblemComparison() {
             >
               {/* Highlight ribbon (Full Rounded Pill) */}
               <div className="absolute top-4 right-4 bg-gradient-to-l from-emerald-600 to-teal-600 text-white text-[11px] font-bold px-3.5 py-1 rounded-full shadow-xs">
-                RECOMMENDED FLOW
+                RESEARCH CONCEPT
               </div>
 
               <div className="flex items-center justify-between gap-3 border-b border-emerald-100 pb-4">
@@ -204,16 +204,16 @@ export function InteractiveProblemComparison() {
               <div className="mt-6 rounded-[1.25rem] border border-emerald-200/60 bg-emerald-900 text-white p-4.5">
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center">
                   <div>
-                    <div className="text-base font-extrabold text-emerald-300 font-mono">0</div>
-                    <div className="text-[11px] text-emerald-100/80">CEX Required</div>
+                    <div className="text-base font-extrabold text-emerald-300 font-mono">Simpler</div>
+                    <div className="text-[11px] text-emerald-100/80">Fewer Detours</div>
                   </div>
                   <div>
                     <div className="text-base font-extrabold text-emerald-300 font-mono">100%</div>
-                    <div className="text-[11px] text-emerald-100/80">Self-Custody</div>
+                    <div className="text-[11px] text-emerald-100/80">Self-Custody Focus</div>
                   </div>
                   <div className="col-span-2 sm:col-span-1">
-                    <div className="text-base font-extrabold text-emerald-300 font-mono">Instant</div>
-                    <div className="text-[11px] text-emerald-100/80">IDR Settlement</div>
+                    <div className="text-base font-extrabold text-emerald-300 font-mono">Indicative</div>
+                    <div className="text-[11px] text-emerald-100/80">Net IDR Transparency</div>
                   </div>
                 </div>
               </div>
