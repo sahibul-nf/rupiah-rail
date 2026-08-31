@@ -8,27 +8,33 @@ interface Props {
 const { currentPath = "/" } = Astro.props;
 ---
 
-<footer class="border-t border-line bg-canvas">
-  <div class="shell flex flex-col gap-4 py-10 text-sm text-ink-muted">
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <p>{footer.copyright}</p>
-      <nav class="flex gap-5" aria-label="Legal">
+<footer class="border-t border-slate-200 bg-slate-50/70 text-slate-600">
+  <div class="shell flex flex-col gap-6 py-12 text-sm">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200/80 pb-6">
+      <div class="flex items-center gap-2">
+        <span class="font-extrabold tracking-tight text-slate-900">{site.name}</span>
+        <span class="text-xs font-mono text-slate-400">|</span>
+        <p class="text-xs text-slate-500">{footer.copyright}</p>
+      </div>
+
+      <nav class="flex gap-6 text-xs font-medium" aria-label="Legal">
         <a
           href="/privacy"
-          class="hover:text-ink"
+          class="hover:text-emerald-700 transition"
           aria-current={currentPath === "/privacy" ? "page" : undefined}
         >
           {footer.privacy}
         </a>
         <a
           href="/terms"
-          class="hover:text-ink"
+          class="hover:text-emerald-700 transition"
           aria-current={currentPath === "/terms" ? "page" : undefined}
         >
           {footer.terms}
         </a>
       </nav>
     </div>
-    <p class="max-w-3xl text-xs leading-relaxed">{site.affiliation}</p>
+
+    <p class="max-w-3xl text-xs leading-relaxed text-slate-400">{site.affiliation}</p>
   </div>
 </footer>
