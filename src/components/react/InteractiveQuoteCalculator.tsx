@@ -4,22 +4,22 @@ import { MotionProvider } from "./MotionProvider";
 
 const PRESET_AMOUNTS = [50, 100, 250, 500, 1000];
 const NETWORKS = [
-  { id: "polygon", name: "Polygon", icon: "⬡", fee: 0.15 },
-  { id: "arbitrum", name: "Arbitrum", icon: "▲", fee: 0.2 },
-  { id: "base", name: "Base", icon: "🔵", fee: 0.1 },
-  { id: "solana", name: "Solana", icon: "◎", fee: 0.05 },
+  { id: "polygon", name: "Polygon (Illustrative)", icon: "⬡", fee: 0.15 },
+  { id: "arbitrum", name: "Arbitrum (Illustrative)", icon: "▲", fee: 0.2 },
+  { id: "base", name: "Base (Illustrative)", icon: "🔵", fee: 0.1 },
+  { id: "solana", name: "Solana (Illustrative)", icon: "◎", fee: 0.05 },
 ];
 
 const BANKS = [
-  { id: "bca", name: "Bank Central Asia (BCA)", account: "•••• 8821", color: "bg-blue-600" },
-  { id: "mandiri", name: "Bank Mandiri", account: "•••• 3940", color: "bg-amber-600" },
-  { id: "jago", name: "Bank Jago", account: "•••• 1029", color: "bg-yellow-500" },
-  { id: "bri", name: "Bank BRI", account: "•••• 6542", color: "bg-blue-800" },
+  { id: "bca", name: "Sample Bank A (e.g. BCA)", account: "•••• 8821 (Sample)" },
+  { id: "mandiri", name: "Sample Bank B (e.g. Mandiri)", account: "•••• 3940 (Sample)" },
+  { id: "jago", name: "Sample Bank C (e.g. Bank Jago)", account: "•••• 1029 (Sample)" },
+  { id: "bri", name: "Sample Bank D (e.g. BRI)", account: "•••• 6542 (Sample)" },
 ];
 
-// Indicative base rate (e.g. 1 USDT ≈ Rp 16,350)
+// Indicative research rate (1 USDT ≈ Rp 16,350)
 const ILLUSTRATIVE_RATE = 16350;
-const PLATFORM_FEE_PERCENT = 0.003; // 0.3%
+const PLATFORM_FEE_PERCENT = 0.003; // 0.3% illustrative fee
 
 export function InteractiveQuoteCalculator() {
   const [amount, setAmount] = useState<number>(100);
@@ -29,7 +29,7 @@ export function InteractiveQuoteCalculator() {
   const [isCopied, setIsCopied] = useState(false);
   const sliderId = useId();
 
-  // Calculations
+  // Calculations (Illustrative research model)
   const networkFeeUsd = network.fee;
   const platformFeeUsd = amount * PLATFORM_FEE_PERCENT;
   const totalFeeUsd = networkFeeUsd + platformFeeUsd;
@@ -43,7 +43,7 @@ export function InteractiveQuoteCalculator() {
   }).format(netIdr);
 
   const handleCopySummary = () => {
-    const summary = `Rupiah Rail Quote Simulation: ${amount} ${asset} (${network.name}) -> ${selectedBank.name} | Estimated Net: ${formattedNetIdr}`;
+    const summary = `Rupiah Rail Conceptual Quote (Illustrative only — research concept): ${amount} ${asset} -> ${selectedBank.name} | Estimated Net: ${formattedNetIdr}`;
     navigator.clipboard?.writeText(summary);
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000);
@@ -68,7 +68,7 @@ export function InteractiveQuoteCalculator() {
               </span>
             </div>
             <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 font-mono text-[11px] font-semibold text-emerald-700 border border-emerald-200/70">
-              Live Preview
+              Illustrative flow
             </span>
           </div>
 
@@ -76,7 +76,7 @@ export function InteractiveQuoteCalculator() {
           <div className="mt-5 space-y-4">
             <div className="rounded-[1.25rem] border border-slate-200/80 bg-slate-50/70 p-4">
               <div className="flex items-center justify-between text-xs font-semibold text-slate-500">
-                <span>YOU SEND</span>
+                <span>SIMULATED SEND AMOUNT</span>
                 <div className="flex rounded-full bg-slate-200/70 p-0.5 text-xs font-semibold">
                   <button
                     type="button"
@@ -111,14 +111,14 @@ export function InteractiveQuoteCalculator() {
                   <span className="text-sm font-semibold text-slate-500">{asset}</span>
                 </div>
                 <span className="font-mono text-xs text-slate-500">
-                  ≈ Rp {(amount * ILLUSTRATIVE_RATE).toLocaleString("id-ID")}
+                  ≈ Rp {(amount * ILLUSTRATIVE_RATE).toLocaleString("id-ID")} (illustrative)
                 </span>
               </div>
 
               {/* Slider Input */}
               <div className="mt-3">
                 <label htmlFor={sliderId} className="sr-only">
-                  Select stablecoin amount
+                  Select stablecoin amount (illustrative)
                 </label>
                 <input
                   id={sliderId}
@@ -156,7 +156,7 @@ export function InteractiveQuoteCalculator() {
               {/* Network */}
               <div>
                 <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Deposit Network
+                  Illustrative Network
                 </label>
                 <div className="relative">
                   <select
@@ -169,7 +169,7 @@ export function InteractiveQuoteCalculator() {
                   >
                     {NETWORKS.map((n) => (
                       <option key={n.id} value={n.id}>
-                        {n.icon} {n.name} (~${n.fee} gas)
+                        {n.icon} {n.name}
                       </option>
                     ))}
                   </select>
@@ -179,10 +179,10 @@ export function InteractiveQuoteCalculator() {
                 </div>
               </div>
 
-              {/* Saved Beneficiary */}
+              {/* Beneficiary */}
               <div>
                 <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Saved Beneficiary
+                  Illustrative Beneficiary
                 </label>
                 <div className="relative">
                   <select
@@ -195,7 +195,7 @@ export function InteractiveQuoteCalculator() {
                   >
                     {BANKS.map((b) => (
                       <option key={b.id} value={b.id}>
-                        {b.name} ({b.account})
+                        {b.name}
                       </option>
                     ))}
                   </select>
@@ -209,21 +209,21 @@ export function InteractiveQuoteCalculator() {
             {/* Breakdown Detail */}
             <div className="rounded-[1.25rem] border border-slate-100 bg-slate-50/50 p-4 text-xs space-y-2">
               <div className="flex justify-between text-slate-600">
-                <span>Indicative FX Rate</span>
+                <span>Indicative FX Rate (Research model)</span>
                 <span className="font-mono font-medium text-slate-900">
-                  1 {asset} = Rp {ILLUSTRATIVE_RATE.toLocaleString("id-ID")}
+                  1 {asset} ≈ Rp {ILLUSTRATIVE_RATE.toLocaleString("id-ID")}
                 </span>
               </div>
               <div className="flex justify-between text-slate-600">
-                <span>Estimated Network + Partner Fee</span>
+                <span>Illustrative Network + Settlement Fee</span>
                 <span className="font-mono text-slate-700">
-                  ${totalFeeUsd.toFixed(2)} {asset} (~Rp {Math.round(totalFeeUsd * ILLUSTRATIVE_RATE).toLocaleString("id-ID")})
+                  ~${totalFeeUsd.toFixed(2)} {asset} (Illustrative)
                 </span>
               </div>
               <div className="flex justify-between text-slate-600">
-                <span>Payout Destination</span>
+                <span>Sample Destination</span>
                 <span className="font-medium text-slate-800">
-                  {selectedBank.name.split(" ")[0]} {selectedBank.account}
+                  {selectedBank.name}
                 </span>
               </div>
             </div>
@@ -233,12 +233,12 @@ export function InteractiveQuoteCalculator() {
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
-                    Net IDR In Your Bank
+                    Indicative Net IDR (Sample)
                   </span>
-                  <p className="text-[11px] text-emerald-700/80">No surprises, what you see is what lands</p>
+                  <p className="text-[11px] text-emerald-700/80">Conceptual calculation for research modeling</p>
                 </div>
                 <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[10px] font-bold text-emerald-800">
-                  Zero Spread Markup
+                  Research model
                 </span>
               </div>
 
@@ -260,7 +260,7 @@ export function InteractiveQuoteCalculator() {
                   type="button"
                   onClick={handleCopySummary}
                   className="rounded-full border border-emerald-300/80 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-emerald-800 hover:bg-emerald-50 transition shadow-xs"
-                  title="Copy quote breakdown"
+                  title="Copy conceptual quote"
                 >
                   {isCopied ? "✓ Copied" : "Copy"}
                 </button>
@@ -270,8 +270,8 @@ export function InteractiveQuoteCalculator() {
 
           {/* Footer note */}
           <div className="mt-4 flex items-center justify-between text-[11px] text-slate-400">
-            <span>* Illustrative rate for research modeling</span>
-            <span className="font-mono">Instant routing</span>
+            <span>* Illustrative only — research concept</span>
+            <span className="font-mono">Not a live quote</span>
           </div>
         </div>
       </div>
