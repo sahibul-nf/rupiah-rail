@@ -87,7 +87,7 @@ export function InteractivePipelineTracker() {
                   setActiveStep(step.id);
                   setIsAutoPlaying(false);
                 }}
-                className={`text-left p-5 rounded-2xl border transition-all relative overflow-hidden ${
+                className={`text-left p-6 rounded-[1.75rem] border transition-all relative overflow-hidden ${
                   isActive
                     ? "bg-white border-emerald-500/80 shadow-lg shadow-emerald-900/5 ring-1 ring-emerald-500/20"
                     : "bg-slate-50/70 border-slate-200/80 hover:bg-white hover:border-slate-300"
@@ -102,7 +102,7 @@ export function InteractivePipelineTracker() {
                 )}
                 <div className="flex items-center justify-between">
                   <span
-                    className={`font-mono text-xs font-bold px-2.5 py-1 rounded-full ${
+                    className={`font-mono text-xs font-bold px-3 py-1 rounded-full ${
                       isActive
                         ? "bg-emerald-100 text-emerald-800"
                         : "bg-slate-200 text-slate-600"
@@ -114,7 +114,7 @@ export function InteractivePipelineTracker() {
                     {step.tag}
                   </span>
                 </div>
-                <h3 className="mt-3 text-base font-bold text-slate-900 leading-snug">
+                <h3 className="mt-3.5 text-base font-bold text-slate-900 leading-snug">
                   {step.title}
                 </h3>
                 <p className="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-2">
@@ -126,11 +126,11 @@ export function InteractivePipelineTracker() {
         </div>
 
         {/* Live Interactive Preview Box */}
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xl shadow-slate-900/5">
+        <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 sm:p-8 shadow-xl shadow-slate-900/5">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Step Explanation (Left) */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 border border-emerald-200 text-emerald-700 text-xs font-semibold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3.5 py-1.5 border border-emerald-200 text-emerald-700 text-xs font-semibold">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                 Active Stage: {currentStepData.tag}
               </div>
@@ -146,15 +146,15 @@ export function InteractivePipelineTracker() {
                 <button
                   type="button"
                   onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                  className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition ${
+                  className={`text-xs font-semibold px-4 py-2 rounded-full border transition-all ${
                     isAutoPlaying
-                      ? "bg-emerald-600 text-white border-emerald-600"
+                      ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
                       : "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200"
                   }`}
                 >
                   {isAutoPlaying ? "❚❚ Pause Auto Tour" : "▶ Play Interactive Tour"}
                 </button>
-                <span className="text-xs text-slate-400">Step {activeStep} of 3</span>
+                <span className="text-xs text-slate-400 font-mono">Step {activeStep} of 3</span>
               </div>
             </div>
 
@@ -167,7 +167,7 @@ export function InteractivePipelineTracker() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96, y: -8 }}
                   transition={{ duration: 0.2 }}
-                  className="rounded-2xl border border-slate-200/90 bg-slate-900 text-slate-100 p-5 sm:p-6 shadow-xl"
+                  className="rounded-[1.5rem] border border-slate-200/90 bg-slate-900 text-slate-100 p-5 sm:p-6 shadow-xl"
                 >
                   {/* Step 1 Demo: Bank Selection */}
                   {activeStep === 1 && (
@@ -184,14 +184,14 @@ export function InteractivePipelineTracker() {
                         {currentStepData.actionDemo.options?.map((opt, i) => (
                           <div
                             key={opt.name}
-                            className={`flex items-center justify-between p-3 rounded-xl border transition-all cursor-pointer ${
+                            className={`flex items-center justify-between p-3.5 rounded-[1rem] border transition-all cursor-pointer ${
                               i === 0
                                 ? "bg-emerald-950/50 border-emerald-500/60 text-white ring-1 ring-emerald-500/30"
                                 : "bg-slate-800/60 border-slate-700/60 text-slate-300 hover:bg-slate-800"
                             }`}
                           >
                             <div className="flex items-center gap-3">
-                              <div className="h-9 w-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-xs text-slate-200">
+                              <div className="h-9 w-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-xs text-slate-200">
                                 {opt.name.slice(0, 3).toUpperCase()}
                               </div>
                               <div>
@@ -201,7 +201,7 @@ export function InteractivePipelineTracker() {
                                 </div>
                               </div>
                             </div>
-                            <div className="flex items-center gap-1 text-[11px] font-semibold text-emerald-400">
+                            <div className="flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
                               <span>✓ Verified</span>
                             </div>
                           </div>
@@ -222,16 +222,16 @@ export function InteractivePipelineTracker() {
                         </span>
                       </div>
                       <div className="grid grid-cols-2 gap-3 text-xs">
-                        <div className="bg-slate-800/70 p-3 rounded-xl border border-slate-700/60">
+                        <div className="bg-slate-800/70 p-3.5 rounded-[1rem] border border-slate-700/60">
                           <span className="text-slate-400 block text-[11px]">Send Amount</span>
                           <span className="text-sm font-bold font-mono text-white">100.00 USDT</span>
                         </div>
-                        <div className="bg-slate-800/70 p-3 rounded-xl border border-slate-700/60">
+                        <div className="bg-slate-800/70 p-3.5 rounded-[1rem] border border-slate-700/60">
                           <span className="text-slate-400 block text-[11px]">Indicative Rate</span>
                           <span className="text-sm font-bold font-mono text-white">1 USDT = Rp 16,350</span>
                         </div>
                       </div>
-                      <div className="bg-slate-800/40 p-3 rounded-xl border border-slate-800 space-y-1.5 text-xs text-slate-300">
+                      <div className="bg-slate-800/40 p-3.5 rounded-[1rem] border border-slate-800 space-y-1.5 text-xs text-slate-300">
                         <div className="flex justify-between">
                           <span className="text-slate-400">Network Gas (Base/Polygon)</span>
                           <span className="font-mono text-emerald-400">~$0.15</span>
@@ -260,10 +260,10 @@ export function InteractivePipelineTracker() {
                         </span>
                       </div>
                       <div className="space-y-2">
-                        {currentStepData.actionDemo.stages?.map((stg, idx) => (
+                        {currentStepData.actionDemo.stages?.map((stg) => (
                           <div
                             key={stg.label}
-                            className="flex items-center justify-between p-2.5 rounded-xl bg-slate-800/70 border border-slate-700/60 text-xs"
+                            className="flex items-center justify-between p-3 rounded-[0.875rem] bg-slate-800/70 border border-slate-700/60 text-xs"
                           >
                             <div className="flex items-center gap-2.5">
                               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">

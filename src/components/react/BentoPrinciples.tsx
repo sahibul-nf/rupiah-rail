@@ -11,9 +11,9 @@ const PRINCIPLES = [
     colSpan: "lg:col-span-7",
     spotlight: "rgba(16, 185, 129, 0.15)",
     preview: (
-      <div className="mt-4 flex items-center justify-between rounded-2xl bg-emerald-50/70 border border-emerald-200/60 p-3.5 text-xs font-mono">
+      <div className="mt-5 flex items-center justify-between rounded-full bg-emerald-50/70 border border-emerald-200/60 px-4 py-2.5 text-xs font-mono">
         <span className="text-slate-600">Net Deposit: 100 USDT</span>
-        <span className="font-bold text-emerald-800 bg-emerald-100 px-2 py-1 rounded-lg">
+        <span className="font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
           ➔ Exact Rp 1,630,095
         </span>
       </div>
@@ -27,11 +27,11 @@ const PRINCIPLES = [
     colSpan: "lg:col-span-5",
     spotlight: "rgba(6, 182, 212, 0.15)",
     preview: (
-      <div className="mt-4 flex gap-2 overflow-x-auto pb-1 text-xs font-mono">
-        <span className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-slate-700 whitespace-nowrap">
+      <div className="mt-5 flex gap-2 overflow-x-auto pb-1 text-xs font-mono">
+        <span className="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-slate-700 whitespace-nowrap shadow-xs">
           ✓ BCA (8821)
         </span>
-        <span className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-slate-700 whitespace-nowrap">
+        <span className="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-slate-700 whitespace-nowrap shadow-xs">
           ✓ Mandiri (3940)
         </span>
       </div>
@@ -45,7 +45,7 @@ const PRINCIPLES = [
     colSpan: "lg:col-span-5",
     spotlight: "rgba(99, 102, 241, 0.15)",
     preview: (
-      <div className="mt-4 flex items-center gap-2 rounded-xl bg-slate-50 border border-slate-200 p-3 text-xs text-slate-600">
+      <div className="mt-5 flex items-center gap-2 rounded-full bg-slate-50 border border-slate-200 px-4 py-2.5 text-xs text-slate-600">
         <span className="text-base">🛡️</span>
         <span>Non-custodial. No deposit escrow locks.</span>
       </div>
@@ -59,12 +59,12 @@ const PRINCIPLES = [
     colSpan: "lg:col-span-7",
     spotlight: "rgba(16, 185, 129, 0.15)",
     preview: (
-      <div className="mt-4 grid grid-cols-2 gap-2 text-center text-[11px] font-semibold text-slate-700">
-        <div className="rounded-xl bg-slate-50 border border-slate-200 p-2">
+      <div className="mt-5 grid grid-cols-2 gap-2 text-center text-[11px] font-semibold text-slate-700">
+        <div className="rounded-full bg-slate-50 border border-slate-200 py-2 px-3">
           Bank Licensed Rails
         </div>
-        <div className="rounded-xl bg-slate-50 border border-slate-200 p-2">
-          Strict AML / Sanctions Screening
+        <div className="rounded-full bg-slate-50 border border-slate-200 py-2 px-3">
+          Strict AML / Sanctions
         </div>
       </div>
     ),
@@ -88,7 +88,7 @@ export function BentoPrinciples() {
               <div>
                 <div className="flex items-center justify-between">
                   <span className="text-2xl">{item.icon}</span>
-                  <span className="text-[10px] font-bold font-mono uppercase tracking-widest text-slate-600 bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded-full">
+                  <span className="text-[10px] font-bold font-mono uppercase tracking-widest text-slate-600 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">
                     {item.badge}
                   </span>
                 </div>

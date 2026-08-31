@@ -60,10 +60,10 @@ body {
   left: 1rem;
   top: -3rem;
   z-index: 80;
-  border-radius: 0.5rem;
+  border-radius: 9999px;
   background: var(--color-ink);
   color: #fff;
-  padding: 0.5rem 0.875rem;
+  padding: 0.5rem 1rem;
   font-weight: 500;
   transition: top 0.2s;
 }
@@ -95,62 +95,63 @@ body {
   }
 }
 
-/* Premium Buttons */
+/* Premium Full-Rounded (Pill) Buttons */
 .btn-primary,
 .btn-secondary,
 .btn-on-navy {
   display: inline-flex;
-  min-height: 3rem;
+  min-height: 3.125rem;
   align-items: center;
   justify-content: center;
-  border-radius: 0.75rem;
-  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
   font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   text-decoration: none;
-  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-primary {
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 14px 0 rgba(5, 150, 105, 0.25), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px 0 rgba(5, 150, 105, 0.28), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, #047857 0%, #065f46 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px 0 rgba(5, 150, 105, 0.35);
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px 0 rgba(5, 150, 105, 0.38);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--color-line);
   color: var(--color-ink);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .btn-secondary:hover {
   background: #ffffff;
   border-color: #cbd5e1;
   color: var(--color-ink);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
 .btn-on-navy {
   background: #ffffff;
   color: var(--color-ink);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 .btn-on-navy:hover {
   background: #f8fafc;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 section[id] {
@@ -167,23 +168,25 @@ details summary::-webkit-details-marker {
 
 /* Glassmorphism Surface */
 .glass-surface {
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.85);
 }
 
+/* Premium Card Surfaces with Consistent 28px (rounded-[1.75rem]) Radius */
 .card-surface {
+  border-radius: 1.75rem;
   border: 1px solid var(--color-line);
   background: #ffffff;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 4px 16px -4px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 6px 20px -4px rgba(15, 23, 42, 0.04);
   transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-surface:hover {
   border-color: #cbd5e1;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.08);
 }
 
 /* Glow Elements */

@@ -8,8 +8,8 @@ import WordmarkMark from "./WordmarkMark.astro";
 >
   <div class="shell flex items-center justify-between gap-4 py-4">
     <a href="/" class="flex items-center gap-2.5 text-slate-900 group">
-      <div class="p-1 rounded-xl bg-slate-50 border border-slate-200 group-hover:border-emerald-500/50 transition-all">
-        <WordmarkMark className="h-7 w-7 shrink-0 text-emerald-600" />
+      <div class="p-1.5 rounded-2xl bg-slate-50 border border-slate-200/90 group-hover:border-emerald-500/50 group-hover:bg-emerald-50/50 transition-all shadow-xs">
+        <WordmarkMark className="h-6 w-6 shrink-0 text-emerald-600" />
       </div>
       <div class="flex flex-col">
         <span class="text-[0.95rem] font-extrabold tracking-tight text-slate-900 leading-none">
@@ -35,23 +35,23 @@ import WordmarkMark from "./WordmarkMark.astro";
     </nav>
 
     <div class="flex items-center gap-3">
-      <a class="btn-primary hidden sm:inline-flex text-xs px-4 py-2" href={header.ctaHref}>
+      <a class="btn-primary hidden sm:inline-flex text-xs px-5 py-2.5" href={header.ctaHref}>
         {header.cta}
       </a>
       <details class="relative md:hidden">
         <summary
-          class="flex min-h-10 min-w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-800 shadow-sm"
+          class="flex min-h-10 min-w-10 cursor-pointer list-none items-center justify-center rounded-full border border-slate-200 bg-white px-3.5 text-sm font-semibold text-slate-800 shadow-sm"
         >
           Menu
         </summary>
         <div
-          class="absolute right-0 mt-2 w-64 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-xl p-3.5 shadow-2xl"
+          class="absolute right-0 mt-2 w-64 rounded-[1.75rem] border border-slate-200 bg-white/95 backdrop-blur-xl p-4 shadow-2xl"
         >
           <nav class="flex flex-col gap-1.5 text-sm" aria-label="Mobile">
             {
               nav.map((item) => (
                 <a
-                  class="rounded-xl px-3 py-2 text-slate-700 font-medium hover:bg-emerald-50 hover:text-emerald-800 transition"
+                  class="rounded-full px-3.5 py-2 text-slate-700 font-medium hover:bg-emerald-50 hover:text-emerald-800 transition"
                   href={item.href}
                 >
                   {item.label}
